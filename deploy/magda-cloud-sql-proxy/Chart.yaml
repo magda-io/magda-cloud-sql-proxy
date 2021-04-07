@@ -1,0 +1,5 @@
+apiVersion: v2
+description: A replacement of Magda internal built-in Cloud SQL Proxy helm chart. For users who needs to channge Google Cloud SQL Proxy image version with earlier version Magda.
+name: magda-cloud-sql-proxy
+version: 1.0.1
+kubeVersion: ">= 1.14.0-0"
