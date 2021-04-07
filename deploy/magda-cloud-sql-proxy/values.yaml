@@ -1,3 +1,4 @@
+global: {}
 image:
   name: cloudsql-docker
   repository: gcr.io

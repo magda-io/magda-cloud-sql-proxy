@@ -1,0 +1,47 @@
+{{ template "chart.header" . }}
+
+{{ template "chart.deprecationWarning" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+It's a replacement of Magda internal built-in Cloud SQL Proxy helm chart. Its 100% compitible with Magda's internal built-in [cloud-sql-proxy](https://github.com/magda-io/magda/tree/master/deploy/helm/internal-charts/cloud-sql-proxy) chart. 
+
+A user might want to disable Magda's internal built-in [cloud-sql-proxy](https://github.com/magda-io/magda/tree/master/deploy/helm/internal-charts/cloud-sql-proxy) chart and use this one as the dependency instead when he wants to use different version of google cloud sql proxy docker image but ealier versions of Magda that he uses doesn't allow specifying Google Cloud SQL Proxy docker image.
+
+## How to use
+
+Declare as a dependency in your chart.yaml:
+
+```yaml
+- name: magda-cloud-sql-proxy
+    version: 1.0.1
+    repository: https://charts.magda.io
+```
+
+Disable Magda's built-in Cloud SQL Proxy in your config file:
+
+```yaml  
+tags:
+  all: false
+  cloud-sql-proxy: false
+```
+
+Please note: you will still want to leave the global `useCloudSql` field to true to make all Magda conponents use cloud sql connections. e.g.:
+
+```yaml
+global:
+  useCombinedDb: false
+  useCloudSql: true
+```
+
+{{ template "chart.homepageLine" . }}
+
+{{ template "chart.maintainersSection" . }}
+
+{{ template "chart.sourcesSection" . }}
+
+{{ template "chart.requirementsSection" . }}
+
+{{ template "chart.valuesHeader" . }}
+
+{{ template "chart.valuesTable" . }}

@@ -1,0 +1,14 @@
+{
+  "name": "magda-cloud-sql-proxy",
+  "version": "1.0.1",
+  "description": "A replacement of Magda internal built-in Cloud SQL Proxy helm chart.",
+  "main": "index.js",
+  "repository": "git@github.com:magda-io/magda-cloud-sql-proxy.git",
+  "author": "Jacky Jiang <jacky.jiang@data61.csiro.au>",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "helm-lint": "helm lint deploy/magda-cloud-sql-proxy -f deploy/test-deploy.yaml",
+    "helm-docs": "helm-docs -t ./README.md.gotmpl -o ../../README.md"
+  }
+}
