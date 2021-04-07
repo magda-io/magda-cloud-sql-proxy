@@ -5,6 +5,8 @@ on:
     types: [published]
 
 env:
+  # [avoid issue when Github action upgraded from 18.04 default to 20.04](https://github.com/aws/aws-cli/issues/5262)
+  AWS_EC2_METADATA_DISABLED: true
   REPO_NAME: magda-cloud-sql-proxy
   #S3 bucket name: this s3 bucket will be used to store published helm chart and index
   S3_BUCKET: magda-charts
