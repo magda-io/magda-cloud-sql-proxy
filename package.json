@@ -10,5 +10,9 @@
   "scripts": {
     "helm-lint": "helm lint deploy/magda-cloud-sql-proxy -f deploy/test-deploy.yaml",
     "helm-docs": "helm-docs -t ./README.md.gotmpl -o ../../README.md"
+  },
+  "dependencies": {
+    "fs-extra": "^9.1.0",
+    "yaml": "^1.10.2"
   }
 }

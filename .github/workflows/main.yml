@@ -1,0 +1,20 @@
+name: Main CI Workflow
+
+on: push
+
+env:
+  REPO_NAME: magda-cloud-sql-proxy
+
+jobs:
+  build-test-docker:
+    name: Build, Test & Push to Docker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 10
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - run: yarn install
+
+      - run: yarn helm-lint
